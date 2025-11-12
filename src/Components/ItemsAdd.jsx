@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../Features/CartSlice";
-
 function ItemsAdd({ clone, toggleClone }) {
+  
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const [quantity, setQuantity] = useState(1);

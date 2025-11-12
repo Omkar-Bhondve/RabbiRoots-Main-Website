@@ -7,6 +7,8 @@ import Hookah from "../Components/Hookah";
 import ColdDrinks from "../Components/ColdDrinks";
 import ItemsAdd from "../Components/ItemsAdd";
 import Loader from "../Components/Loader";
+import MouthFreshner from "../Components/MouthFreshner";
+import Candies from "../Components/Candies";
 
 function Home({ clone, setClone, toggleClone }) {
   const [loading, setLoading] = useState(true);
@@ -30,6 +32,8 @@ function Home({ clone, setClone, toggleClone }) {
       <Dairy />
       <Hookah />
       <ColdDrinks />
+      <MouthFreshner />
+      <Candies />
       <Rolling />
       <ItemsAdd clone={clone} setClone={setClone} toggleClone={toggleClone} />
     </>

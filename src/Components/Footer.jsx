@@ -96,6 +96,11 @@ const Footer = () => {
                   Bistro
                 </a>
               </li>
+               <li>
+                <a href="#" className="hover:underline">
+                  District
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -209,16 +214,7 @@ const Footer = () => {
                     Magazines
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Stationery Needs
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Print Store
-                  </a>
-                </li>
+                
               </ul>
             </div>
           </div>

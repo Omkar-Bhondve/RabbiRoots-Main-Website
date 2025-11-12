@@ -1,9 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearch, clearSearch } from "../Features/SearchSlice";
 
 function Search() {
+
+    const products = ["Ghee", "Curd", "Water", "Milk", "Sugar", "Oil"];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % products.length);
+    }, 2000); // change every 2 sec
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+ 
+
+
+
   const dispatch = useDispatch();
   const { term, items } = useSelector((state) => state.search);
 
@@ -21,7 +38,7 @@ function Search() {
         <i className="ri-search-line"></i>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder={`Search ${products[index]}...`}
           className="border-transparent w-full outline-none bg-transparent"
           onChange={handleChange}
           value={term}

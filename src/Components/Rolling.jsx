@@ -74,7 +74,7 @@ function Rolling() {
           className="w-full mySwiper flex items-center justify-between"
         >
           {ProductsItems.ProductTwo.map((items, idx) => (
-            <SwiperSlide key={items.id || idx} className="w-[100px] bg-white shadow-md shadow-zinc-200 px-4 py-6">
+            <SwiperSlide key={items.id || idx} className="w-[100px] bg-white shadow-md shadow-zinc-200 border-t-1 border-orange-200 px-4 py-6">
               <img src={items.image} alt="" className="w-[120px] m-auto" />
               <span className="font-semibold text-[12px] text-gray-900">
                 {items.time}
@@ -87,7 +87,7 @@ function Rolling() {
               </span>
               <div className="w-full flex items-center justify-between">
                 <h4 className="font-semibold">$ {items.price}</h4>
-                <button className="border border-green-500 py-2 px-6 rounded-md uppercase font-semibold text-green-500">
+                <button className="border border-green-500 py-2 px-6 rounded-md uppercase font-semibold text-green-500 cursor-pointer hover:bg-green-500 hover:text-white transition-all duration-200">
                   Add
                 </button>
               </div>

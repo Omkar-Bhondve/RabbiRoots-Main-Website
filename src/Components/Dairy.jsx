@@ -77,7 +77,7 @@ function Dairy() {
             {allProducts.map((item, idx) => (
               <SwiperSlide
                 key={item.globalId || idx}
-                className="w-[100px] shadow-md shadow-zinc-200 px-4 py-6 cursor-pointer"
+                className="w-[100px] shadow-md shadow-zinc-100 border-t-1 border-orange-200 px-4 py-6 cursor-pointer"
               >
                 <Link to={`/showitem/${item.globalId}`}>
                   <img src={item.image} alt={item.name} className="w-[120px] m-auto" />
@@ -90,7 +90,7 @@ function Dairy() {
                   </span>
                   <div className="w-full flex items-center justify-between">
                     <h4 className="font-semibold">$ {item.price}</h4>
-                    <button className="border border-green-500 py-2 px-6 rounded-md uppercase font-semibold text-green-500">
+                    <button className="border border-green-500 py-2 px-6 rounded-md uppercase font-semibold text-green-500 cursor-pointer hover:bg-green-500 hover:text-white transition-all duration-200">
                       Add
                     </button>
                   </div>
