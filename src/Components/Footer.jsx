@@ -283,7 +283,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 space-y-4 md:space-y-0">
           <p className="text-center md:text-left">
-            © Blinkit Commerce Private Limited, 2016-2025
+            © RabbiRoots Commerce Private Limited, 2024-2025
           </p>
           <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8">
             <div className="flex items-center space-x-4">
@@ -314,7 +314,7 @@ const Footer = () => {
 
         <div className="mt-8 text-xs text-gray-500 text-center md:text-left">
           <p>
-            "Blinkit" is owned & managed by "Blink Commerce Private Limited" and
+            "RabbiRoots" is owned & managed by "RabbiRoot Commerce Private Limited" and
             is not related, linked or interconnected in whatsoever manner or
             nature, to "GROFFR.COM" which is a real estate services business
             operated by "Redstone Consultancy Services Private Limited".

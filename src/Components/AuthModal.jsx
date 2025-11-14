@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../Features/AuthSlice";
 
 export default function AuthModal({ onClose }) {
   const [tab, setTab] = useState("login");
@@ -16,6 +18,7 @@ export default function AuthModal({ onClose }) {
   const [showPwdLogin, setShowPwdLogin] = useState(false);
   const [showPwdSign, setShowPwdSign] = useState(false);
   const [showConfirmSign, setShowConfirmSign] = useState(false);
+  const dispatch = useDispatch();
 
   const validateLogin = () => {
     const e = {};
@@ -39,6 +42,11 @@ export default function AuthModal({ onClose }) {
   const submitLogin = (ev) => {
     ev.preventDefault();
     if (!validateLogin()) return;
+    const userObj = {
+      email: loginData.email,
+      name: loginData.email ? loginData.email.split("@")[0] : "User",
+    };
+    dispatch(login(userObj));
     setMessage("Logged in successfully");
     setTimeout(() => {
       setMessage("");
@@ -49,10 +57,12 @@ export default function AuthModal({ onClose }) {
   const submitSignup = (ev) => {
     ev.preventDefault();
     if (!validateSign()) return;
+    const userObj = { email: signData.email, name: signData.name };
+    dispatch(login(userObj));
     setMessage("Account created successfully");
     setTimeout(() => {
       setMessage("");
-      setTab("login");
+      onClose();
     }, 900);
   };
 
@@ -342,7 +352,11 @@ export default function AuthModal({ onClose }) {
           <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-green-50 via-emerald-50 to-white p-8 flex-col justify-between">
             {/* Logo */}
             <div className="mb-6">
-              <img src="/logo.png" alt="Logo" className="w-[100%] h-auto rounded-2xl" />
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="w-[100%] h-auto rounded-2xl"
+              />
             </div>
 
             {/* Benefits */}

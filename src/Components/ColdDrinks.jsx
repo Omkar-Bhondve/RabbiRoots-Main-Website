@@ -78,7 +78,7 @@ function ColdDrinks() {
             {allProducts.map((item, idx) => (
               <SwiperSlide
                 key={item.globalId || idx}
-                className="w-[100px] cursor-pointer bg-white shadow-md border-t-1 border-orange-200 shadow-zinc-200 px-4 py-6"
+                className="w-[100px] cursor-pointer bg-white shadow-md border-t-1 border-orange-200 shadow-zinc-300 px-4 py-6"
               >
                 <Link to={`/showitem/${item.globalId}`}>
                   <img src={item.image} alt={item.name} className="w-[120px] m-auto" />

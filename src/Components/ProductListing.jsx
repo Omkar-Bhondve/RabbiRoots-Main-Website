@@ -349,53 +349,53 @@ function App() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col py-6 px-22 max-lg:px-8 shadow-sm bg-gray-100">
-      <div className="flex gap-2 p-6 flex-1 overflow-hidden">
-        <aside className="w-28 sticky top-0 flex-shrink-0 shadow-lg h-screen overflow-y-auto bg-white p-3 rounded-lg">
-          <h2 className="text-sm font-semibold text-gray-700 mb-3 text-center">
+    <div className="w-full min-h-screen flex flex-col py-3 md:py-6 px-3 md:px-22 max-lg:px-8 shadow-sm bg-gray-100">
+      <div className="flex gap-2 md:gap-4 p-2 md:p-6 flex-1 overflow-hidden flex-col md:flex-row">
+        <aside className="hidden md:flex w-full md:w-28 sticky top-0 flex-shrink-0 shadow-lg md:h-screen overflow-y-auto bg-white p-2 md:p-3 rounded-lg flex-col gap-2">
+          <h2 className="text-xs md:text-sm font-semibold text-gray-700 mb-2 md:mb-3 text-center">
             Products
           </h2>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2 md:gap-3">
             {products.slice(0, 5).map((prod) => (
               <div
                 key={prod.id}
-                className="flex flex-col items-center text-center rounded p-2 bg-white hover:shadow-sm transition"
+                className="flex flex-col items-center text-center rounded p-1 md:p-2 bg-white hover:shadow-sm transition"
               >
-                <div className="w-15 h-15 mb-1 rounded overflow-hidden">
+                <div className="w-12 h-12 md:w-15 md:h-15 mb-1 rounded overflow-hidden">
                   <img
                     src={prod.image}
                     alt={prod.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="text-xs text-gray-700 w-20 break-words">
-                  {prod.name} 
+                <div className="text-xs text-gray-700 w-16 md:w-20 break-words">
+                  {prod.name}
                 </div>
               </div>
             ))}
           </div>
         </aside>
 
-        <main className="flex-1 shadow-lg p-6 bg-white rounded-lg overflow-y-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <main className="flex-1 shadow-lg p-3 md:p-6 bg-white rounded-lg overflow-y-auto">
+          <h1 className="text-xl md:text-3xl font-bold text-gray-900 mb-2">
             {renderCategoryContent(selectedCategory).title}
           </h1>
-          <p className="text-gray-600 text-sm mb-4">
+          <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
             {renderCategoryContent(selectedCategory).description}
           </p>
-          <hr className="mb-6" />
+          <hr className="mb-4 md:mb-6" />
 
-          <div className="grid grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3">
             {products.map((product) => (
               <div
                 key={product.id}
-                className="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md transition-shadow duration-200 relative group"
+                className="bg-white border border-gray-200 rounded-lg p-2 md:p-3 hover:shadow-md transition-shadow duration-200 relative group"
               >
-                <div className="absolute top-2 left-2 bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded z-10">
+                <div className="absolute top-1 md:top-2 left-1 md:left-2 bg-orange-500 text-white text-xs font-bold px-1.5 md:px-2 py-0.5 rounded z-10">
                   {product.discount}
                 </div>
 
-                <div className="aspect-square mb-2 flex items-center justify-center bg-gray-50 rounded overflow-hidden">
+                <div className="aspect-square mb-1 md:mb-2 flex items-center justify-center bg-gray-50 rounded overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -405,18 +405,22 @@ function App() {
 
                 <div className="flex items-center gap-0.5 text-gray-600 text-xs mb-1">
                   <Clock size={10} />
-                  <span className="font-semibold">{product.deliveryTime}</span>
+                  <span className="font-semibold text-xs">
+                    {product.deliveryTime}
+                  </span>
                 </div>
 
                 <h3 className="text-xs font-medium text-gray-900 mb-1 line-clamp-2 h-8">
                   {product.name}
                 </h3>
 
-                <p className="text-xs text-gray-600 mb-2">{product.packInfo}</p>
+                <p className="text-xs text-gray-600 mb-1 md:mb-2">
+                  {product.packInfo}
+                </p>
 
                 <div className="flex items-center justify-between gap-1">
                   <div>
-                    <span className="text-sm font-bold text-gray-900">
+                    <span className="text-xs md:text-sm font-bold text-gray-900">
                       ₹{product.price}
                     </span>
                     {product.originalPrice && (
@@ -427,11 +431,11 @@ function App() {
                   </div>
 
                   {product.hasOptions ? (
-                    <button className="bg-white border-2 border-green-600 text-green-600 text-xs font-semibold px-2 py-1 rounded hover:bg-green-500 hover:text-white transition-all duration-200">
+                    <button className="bg-white border-2 border-green-600 text-green-600 text-xs font-semibold px-1.5 md:px-2 py-1 rounded hover:bg-green-500 hover:text-white transition-all duration-200">
                       ADD
                     </button>
                   ) : (
-                    <button className="bg-white border-2 border-green-600 text-green-600 text-xs font-semibold px-3 py-1 rounded hover:bg-green-500 hover:text-white transition-all duration-200">
+                    <button className="bg-white border-2 border-green-600 text-green-600 text-xs font-semibold px-2 md:px-3 py-1 rounded hover:bg-green-500 hover:text-white transition-all duration-200">
                       ADD
                     </button>
                   )}

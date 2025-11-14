@@ -80,7 +80,7 @@ function Candies() {
           {allProducts.map((item, idx) => (
             <SwiperSlide
               key={item.globalId || idx}
-              className="w-[100px] shadow-md shadow-zinc-100 border-t-1 border-orange-200 px-4 py-6 cursor-pointer"
+              className="w-[100px] shadow-md shadow-zinc-300 border-t-1 border-orange-200 px-4 py-6 cursor-pointer"
             >
               <Link to={`/showitem/${item.globalId}`}>
                 <img
