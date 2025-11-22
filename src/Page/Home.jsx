@@ -11,15 +11,19 @@ import MouthFreshner from "../Components/MouthFreshner";
 import Candies from "../Components/Candies";
 
 function Home({ clone, setClone, toggleClone }) {
-  const [loading, setLoading] = useState(true);
+  const initialShown = sessionStorage.getItem("appInitialized") === "true";
+  const [loading, setLoading] = useState(() => (initialShown ? false : true));
 
   useEffect(() => {
+    if (initialShown) return;
     const timer = setTimeout(() => {
       setLoading(false);
-    }
-    , 2000);
+      try {
+        sessionStorage.setItem("appInitialized", "true");
+      } catch (e) {}
+    }, 2000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [initialShown]);
 
   if (loading) {
     return <Loader />;

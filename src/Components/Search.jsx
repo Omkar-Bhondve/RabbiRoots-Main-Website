@@ -17,8 +17,6 @@ function Search() {
   }, []);
 
 
- 
-
 
 
   const dispatch = useDispatch();

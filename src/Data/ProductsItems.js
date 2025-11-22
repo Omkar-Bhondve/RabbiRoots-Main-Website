@@ -5,11 +5,28 @@ export const ProductsItems = {
       name: "Amul Gold Full Cream Milk",
       size: "500 ml",
       price: 35,
-      image: "./Product/ProductOne/1.avif",
+      image: "./Product/ProductOne/TigerImage.webp",
       deliveryTime: "10 MINS",
       ali: true,
       description:
         "Rich and creamy full cream milk from Amul, packed with natural goodness. Perfect for your family's daily milk needs with high calcium and protein content.",
+      featureImages: [
+        {
+          image: "./Product/ProductOne/1.avif",
+          title: "Premium Quality",
+          description: "Handpicked and verified for highest quality standards"
+        },
+        {
+          image: "./Product/ProductOne/2.avif",
+          title: "Fresh & Natural",
+          description: "Sourced fresh daily for maximum freshness and taste"
+        },
+        {
+          image: "./Product/ProductOne/3.avif",
+          title: "Best Value",
+          description: "Great quality at competitive prices for everyday needs"
+        }
+      ]
     },
     {
       id: 2,
@@ -21,6 +38,23 @@ export const ProductsItems = {
       ali: true,
       description:
         "Fresh cow milk from Mother Dairy, sourced from healthy cows. Provides essential nutrients and is perfect for families looking for pure, unadulterated milk.",
+      featureImages: [
+        {
+          image: "./Product/ProductOne/2.avif",
+          title: "Pure & Fresh",
+          description: "Directly sourced from healthy cows for pure quality"
+        },
+        {
+          image: "./Product/ProductOne/4.avif",
+          title: "Nutritious",
+          description: "Packed with essential nutrients for your family"
+        },
+        {
+          image: "./Product/ProductOne/6.avif",
+          title: "Trusted Brand",
+          description: "From Mother Dairy, a name you can trust"
+        }
+      ]
     },
     {
       id: 3,
@@ -32,6 +66,23 @@ export const ProductsItems = {
       ali: true,
       description:
         "Freshly prepared classic curd from Mother Dairy. Rich in probiotics, it aids digestion and is perfect for your daily consumption.",
+      featureImages: [
+        {
+          image: "./Product/ProductOne/3.avif",
+          title: "Rich Probiotics",
+          description: "Contains natural probiotics for better digestion"
+        },
+        {
+          image: "./Product/ProductOne/7.avif",
+          title: "Creamy Texture",
+          description: "Smooth and creamy texture for perfect taste"
+        },
+        {
+          image: "./Product/ProductOne/13.avif",
+          title: "Daily Fresh",
+          description: "Prepared fresh daily for optimal quality"
+        }
+      ]
     },
     {
       id: 4,
@@ -560,6 +611,12 @@ export const createUnifiedProducts = () => {
       ali: product.ali,
       price: product.price,
       image: `/${product.image.replace("./", "")}`, // Fix image path
+      featureImages: product.featureImages
+        ? product.featureImages.map((fi) => ({
+            ...fi,
+            image: `/${fi.image.replace("./", "")}`,
+          }))
+        : null,
     });
   });
 
@@ -575,6 +632,12 @@ export const createUnifiedProducts = () => {
       ali: product.ali,
       price: product.price,
       image: `/${product.image.replace("./", "")}`, // Fix image path
+      featureImages: product.featureImages
+        ? product.featureImages.map((fi) => ({
+            ...fi,
+            image: `/${fi.image.replace("./", "")}`,
+          }))
+        : null,
     });
   });
 
@@ -590,6 +653,12 @@ export const createUnifiedProducts = () => {
       ali: false, // ProductThere doesn't have ali property
       price: product.price,
       image: `/${product.image.replace("./", "")}`, // Fix image path
+      featureImages: product.featureImages
+        ? product.featureImages.map((fi) => ({
+            ...fi,
+            image: `/${fi.image.replace("./", "")}`,
+          }))
+        : null,
     });
   });
 
@@ -607,6 +676,12 @@ export const createUnifiedProducts = () => {
       originalPrice: product.original_price,
       discount: product.discount,
       image: `/${product.image.replace("./", "")}`, // Fix image path
+      featureImages: product.featureImages
+        ? product.featureImages.map((fi) => ({
+            ...fi,
+            image: `/${fi.image.replace("./", "")}`,
+          }))
+        : null,
     });
   });
 

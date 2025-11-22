@@ -80,24 +80,35 @@ function Candies() {
           {allProducts.map((item, idx) => (
             <SwiperSlide
               key={item.globalId || idx}
-              className="w-[100px] shadow-md shadow-zinc-300 border-t-1 border-orange-200 px-4 py-6 cursor-pointer"
+              className="w-[160px] h-[320px] shadow-md shadow-zinc-300 border-b-1 rounded-xl border-t-1 border-orange-200 px-4 py-4 cursor-pointer flex flex-col justify-between bg-white"
             >
-              <Link to={`/showitem/${item.globalId}`}>
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-[120px] m-auto"
-                />
-                <span className="font-semibold text-[12px] text-gray-900">
-                  {item.deliveryTime}
-                </span>
-                <p className="font-bold text-sm py-2">{item.name}</p>
-                <span className="font-semibold text-[12px] text-gray-900">
-                  {item.size || item.quantity || item.volume}
-                </span>
-                <div className="w-full flex items-center justify-between">
+              <Link
+                to={`/showitem/${item.globalId}`}
+                className="h-full flex flex-col"
+              >
+                <div className="flex items-center justify-center h-28">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-[120px] h-28 object-contain"
+                  />
+                </div>
+
+                <div className="pt-2">
+                  <span className="font-semibold text-[12px] text-gray-900">
+                    {item.deliveryTime}
+                  </span>
+                  <p className="font-bold text-sm py-2 min-h-[44px] text-gray-900 truncate">
+                    {item.name}
+                  </p>
+                  <span className="font-semibold text-[12px] text-gray-900">
+                    {item.size || item.quantity || item.volume}
+                  </span>
+                </div>
+
+                <div className="w-full flex items-center justify-between mt-auto pt-3">
                   <h4 className="font-semibold">$ {item.price}</h4>
-                  <button className="border border-green-500 py-2 px-6 rounded-md uppercase font-semibold text-green-500 cursor-pointer hover:bg-green-500 hover:text-white transition-all duration-200">
+                  <button className="border border-green-500 py-2 px-4 rounded-md uppercase font-semibold text-green-500 cursor-pointer hover:bg-green-500 hover:text-white transition-all duration-200">
                     Add
                   </button>
                 </div>

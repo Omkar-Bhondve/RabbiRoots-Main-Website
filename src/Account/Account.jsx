@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { FiLogOut } from "react-icons/fi";
+import { FiShield } from "react-icons/fi";
+import { PiGiftBold } from "react-icons/pi";
+import { FiPackage } from "react-icons/fi";
+import { FaRegAddressCard } from "react-icons/fa";
+
 // using simple emoji/icons to avoid extra dependency on react-icons
 
 import { logout } from "../Features/AuthSlice";
@@ -63,7 +69,7 @@ const Account = () => {
           <aside className="w-full md:w-55 flex-shrink-0">
             <nav className="bg-white rounded-lg shadow-sm p-6">
               <ul className="space-y-4">
-                <div className="mb-6 px-10 py-3">
+                <div className="mb-6 px-10 py-3 underline text-center">
                   <strong>8806832303</strong>
                 </div>
                 <li>
@@ -75,7 +81,8 @@ const Account = () => {
                         : "text-gray-700 hover:bg-gray-100 hover:text-gray-600"
                     }`}
                   >
-                    <span className="text-xl">📍</span>
+                    <FaRegAddressCard size={22} className="text-gray-600" />
+                    <span className="text-xl"></span>
                     My Addresses
                   </button>
                 </li>
@@ -89,7 +96,9 @@ const Account = () => {
                         : "text-gray-700 hover:bg-gray-100 hover:text-gray-600"
                     }`}
                   >
-                    <span className="text-xl">🧾</span>
+                    <span className="text-xl">
+                      <FiPackage size={22} className="text-gray-600" />
+                    </span>
                     My Orders
                   </button>
                 </li>
@@ -102,7 +111,9 @@ const Account = () => {
                         : "text-gray-700 hover:bg-gray-100 hover:text-gray-600"
                     }`}
                   >
-                    <span className="text-xl">🎁</span>
+                    <span className="text-xl">
+                      <PiGiftBold size={22} className="text-gray-600" />
+                    </span>
                     E-Gift Cards
                   </button>
                 </li>
@@ -115,7 +126,9 @@ const Account = () => {
                         : "text-gray-700 hover:bg-gray-100 hover:text-gray-600"
                     }`}
                   >
-                    <span className="text-xl">🔒</span>
+                    <span className="text-xl">
+                      <FiShield size={22} className="text-gray-600" />
+                    </span>
                     Account privacy
                   </button>
                 </li>
@@ -124,7 +137,9 @@ const Account = () => {
                     onClick={handleLogout}
                     className="flex gap-1.5 text-sm w-full text-left px-4 py-3 hover:bg-orange-600 rounded-md transition-colors duration-200 font-medium cursor-pointer"
                   >
-                    <span className="text-xl">👤</span>
+                    <span className="text-xl">
+                      <FiLogOut size={22} />
+                    </span>
                     Logout
                   </button>
                 </li>

@@ -7,6 +7,10 @@ import ScrollToTop from "../Components/ScrollToTop";
 import ProductListing from "../Components/ProductListing";
 import AuthModal from "../Components/AuthModal";
 import Account from "../Account/Account";
+import PrivacyPolicy from "../PolicyPages/PrivacyPolicy";
+import AboutUs from "../PolicyPages/AboutUs";
+import ContactUs from "../PolicyPages/ContactUs";
+import ReturnPolicy from "../PolicyPages/ReturnPolicy";
 
 function Layout({ clone, setClone, toggleClone }) {
   return (
@@ -24,6 +28,11 @@ function Layout({ clone, setClone, toggleClone }) {
         <Route path="/productlisting" element={<ProductListing />} />
         <Route path="/authmodal" element={<AuthModal />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/contactUs" element={<ContactUs />} />
+        <Route path="/returnpolicy" element={<ReturnPolicy />} />
+
       </Routes>
     </div>
   );
