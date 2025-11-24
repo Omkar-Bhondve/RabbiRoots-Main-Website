@@ -1,27 +1,27 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { createUnifiedProducts } from "../Data/ProductsItems";
+import { createUnifiedProducts } from "../../Data/ProductsItems";
 import { Pagination, Navigation } from "swiper/modules";
-import { Link } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Link } from "react-router-dom";
 
-function Hookah() {
+function Candies() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
   const allProducts = createUnifiedProducts().filter(
-    (product) => product.category === "ProductThere"
+    (product) =>
+      product.category === "ProductOne" || product.category === "ProductTwo"
   );
 
   return (
     <div className="w-full py-6 px-22 max-lg:px-8">
-      <h1 className="font-semibold text-2xl py-4">Hookah</h1>
+      <h1 className="font-semibold text-2xl py-4">Candies & Gums</h1>
 
       <div className="w-full relative">
-        {/* Custom Navigation Buttons */}
         <button
           ref={prevRef}
           className="custom-swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white  text-gray-500 rounded-full w-10 h-10 flex items-center justify-center shadow-xl hover:bg-zinc-200 hover:text-white transition-all duration-200"
@@ -38,6 +38,7 @@ function Hookah() {
         >
           <i className="ri-arrow-right-s-line text-2xl"></i>
         </button>
+
         {/* Removing the outer Link component to allow individual product links */}
         {/* <Link to={"/card"}> */}
         <Swiper
@@ -71,7 +72,6 @@ function Hookah() {
             },
           }}
           onBeforeInit={(swiper) => {
-            // Assign navigation elements
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
           }}
@@ -102,7 +102,7 @@ function Hookah() {
                     {item.name}
                   </p>
                   <span className="font-semibold text-[12px] text-gray-900">
-                    {item.size}
+                    {item.size || item.quantity || item.volume}
                   </span>
                 </div>
 
@@ -122,4 +122,4 @@ function Hookah() {
   );
 }
 
-export default Hookah;
+export default Candies;

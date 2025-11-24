@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Topbar from "../Components/Topbar";
-import Category from "../Components/Category";
-import Dairy from "../Components/Dairy";
-import Rolling from "../Components/Rolling";
-import Hookah from "../Components/Hookah";
-import ColdDrinks from "../Components/ColdDrinks";
-import ItemsAdd from "../Components/ItemsAdd";
-import Loader from "../Components/Loader";
-import MouthFreshner from "../Components/MouthFreshner";
-import Candies from "../Components/Candies";
+import Topbar from "../components/Common/Topbar";
+import Category from "../components/Categories/Category";
+import Dairy from "../components/Categories/Dairy";
+import Rolling from "../components/Categories/Rolling";
+import Hookah from "../components/Categories/Hookah";
+import ColdDrinks from "../components/Categories/ColdDrinks";
+import ItemsAdd from "../components/UI/ItemsAdd";
+import Loader from "../components/UI/Loader";
+import MouthFreshner from "../components/Categories/MouthFreshner";
+import Candies from "../components/Categories/Candies";
 
 function Home({ clone, setClone, toggleClone }) {
   const initialShown = sessionStorage.getItem("appInitialized") === "true";

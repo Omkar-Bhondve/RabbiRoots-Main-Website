@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { createUnifiedProducts } from "../Data/ProductsItems";
-import Loader from "../Components/Loader";
+import Loader from "../components/UI/Loader";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../Features/CartSlice";
+import { addToCart } from "../features/CartSlice";
 import { 
   Truck, 
   Shield, 

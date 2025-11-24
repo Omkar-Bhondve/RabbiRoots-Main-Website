@@ -1,15 +1,15 @@
 import React from "react";
-import Logo from "../assets/logo.png";
+import Logo from "../../assets/logo.png";
 import "remixicon/fonts/remixicon.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Search from "./Search";
-import Location from "./Location";
+import Search from "../UI/Search";
+import Location from "../UI/Location";
 
 import { useState } from "react";
-import AuthModal from "./AuthModal";
+import AuthModal from "../Auth/AuthModal";
 import { useNavigate } from "react-router-dom";
-import { logout } from "../Features/AuthSlice";
+import { logout } from "../../features/AuthSlice";
 
 function Header({ toggleClone }) {
   const [showAuth, setShowAuth] = useState(false);

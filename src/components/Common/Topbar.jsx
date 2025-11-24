@@ -1,9 +1,9 @@
 import React from "react";
-import TopbarImg from "../assets/topbar.webp";
-import Img1 from "../assets/b1.avif";
-import Img2 from "../assets/b2.avif";
-import Img3 from "../assets/b3.avif";
-import Img4 from "../assets/b4.avif";
+import TopbarImg from "../../assets/topbar.webp";
+import Img1 from "../../assets/b1.avif";
+import Img2 from "../../assets/b2.avif";
+import Img3 from "../../assets/b3.avif";
+import Img4 from "../../assets/b4.avif";
 import { Link } from "react-router-dom";
 
 function Topbar() {

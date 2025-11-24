@@ -9,7 +9,7 @@ import { FaRegAddressCard } from "react-icons/fa";
 
 // using simple emoji/icons to avoid extra dependency on react-icons
 
-import { logout } from "../Features/AuthSlice";
+import { logout } from "../../features/AuthSlice";
 import Addresses from "./Addresses";
 import Orders from "./Orders";
 import GiftCards from "./GiftCards";

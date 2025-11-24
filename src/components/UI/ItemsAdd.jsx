@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "../Features/CartSlice";
+import { addToCart, removeFromCart } from "../../features/CartSlice";
 function ItemsAdd({ clone, toggleClone }) {
   
   const dispatch = useDispatch();

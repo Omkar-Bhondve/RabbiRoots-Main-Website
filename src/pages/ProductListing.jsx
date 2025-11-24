@@ -7,7 +7,7 @@ import {
   Star,
 } from "lucide-react";
 import { useState } from "react";
-import Category from "./Category";
+import Category from "../components/Categories/Category";
 
 const categories = [
   {

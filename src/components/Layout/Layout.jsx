@@ -1,16 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "../Page/Home";
-import NotFoundPage from "../Components/NotFoundPage";
-import ShowItem from "../Components/ShowItem";
-import ScrollToTop from "../Components/ScrollToTop";
-import ProductListing from "../Components/ProductListing";
-import AuthModal from "../Components/AuthModal";
-import Account from "../Account/Account";
-import PrivacyPolicy from "../PolicyPages/PrivacyPolicy";
-import AboutUs from "../PolicyPages/AboutUs";
-import ContactUs from "../PolicyPages/ContactUs";
-import ReturnPolicy from "../PolicyPages/ReturnPolicy";
+import Home from "../../pages/Home";
+import NotFoundPage from "../../pages/NotFoundPage";
+import ShowItem from "../../pages/ShowItem";
+import ScrollToTop from "../Common/ScrollToTop";
+import ProductListing from "../../pages/ProductListing";
+import AuthModal from "../Auth/AuthModal";
+import Account from "../../pages/Account/Account";
+import PrivacyPolicy from "../../pages/Policy/PrivacyPolicy";
+import AboutUs from "../../pages/Policy/AboutUs";
+import ContactUs from "../../pages/Policy/ContactUs";
+import ReturnPolicy from "../../pages/Policy/ReturnPolicy";
 
 function Layout({ clone, setClone, toggleClone }) {
   return (

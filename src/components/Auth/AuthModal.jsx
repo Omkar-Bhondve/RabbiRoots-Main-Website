@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../Features/AuthSlice";
+import { login } from "../../features/AuthSlice";
 
 export default function AuthModal({ onClose }) {
   const [tab, setTab] = useState("login");

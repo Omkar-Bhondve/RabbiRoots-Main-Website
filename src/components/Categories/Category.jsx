@@ -1,5 +1,5 @@
 import React from "react";
-import { categoryItem } from "../Data/Category";
+import { categoryItem } from "../../Data/Category";
 import { Link } from "react-router-dom";
 
 function Category() {

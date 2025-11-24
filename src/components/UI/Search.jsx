@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearch, clearSearch } from "../Features/SearchSlice";
+import { setSearch, clearSearch } from "../../features/SearchSlice";
 
 function Search() {
 
