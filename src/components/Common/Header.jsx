@@ -7,7 +7,7 @@ import Search from "../UI/Search";
 import Location from "../UI/Location";
 
 import { useState } from "react";
-import AuthModal from "../Auth/AuthModal";
+// import AuthModal from "../Auth/AuthModal";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../features/AuthSlice";
 
@@ -151,7 +151,7 @@ function Header({ toggleClone }) {
           {formattedTotalPrice}
         </button>
       </div>
-      {showAuth && <AuthModal onClose={closeAuth} />}
+      {/* {showAuth && <AuthModal onClose={closeAuth} />} */}
     </div>
   );
 }
