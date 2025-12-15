@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createUnifiedProducts } from "../Data/ProductsItems";
+import { createUnifiedProducts } from "../Data/ProductsItems.js";
 
 const allProducts = createUnifiedProducts();
 
