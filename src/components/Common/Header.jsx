@@ -9,7 +9,7 @@ import Location from "../UI/Location";
 import { useState } from "react";
 // import AuthModal from "../Auth/AuthModal";
 import { useNavigate } from "react-router-dom";
-import { logout } from "../../features/AuthSlice";
+import { logout } from "../../features/AuthSlice.js";
 
 function Header({ toggleClone }) {
   const [showAuth, setShowAuth] = useState(false);

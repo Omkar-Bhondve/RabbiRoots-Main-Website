@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { createUnifiedProducts } from "../../Data/ProductsItems";
+import { createUnifiedProducts } from "../../Data/ProductsItems.js";
 import { Pagination, Navigation } from "swiper/modules";
 
 import "swiper/css";

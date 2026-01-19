@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "../../features/CartSlice";
+import { addToCart, removeFromCart } from "../../features/CartSlice.js";
 function ItemsAdd({ clone, toggleClone }) {
-  
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const [quantity, setQuantity] = useState(1);
@@ -23,11 +22,14 @@ function ItemsAdd({ clone, toggleClone }) {
   const smallCartCharge = 20;
 
   const subtotal = cartItems.reduce(
-    (total, item) => total + parseFloat(String(item.price).replace(/[^0-9.-]+/g, "")) * item.quantity,
+    (total, item) =>
+      total +
+      parseFloat(String(item.price).replace(/[^0-9.-]+/g, "")) * item.quantity,
     0
   );
 
-  const grandTotal = subtotal + deliveryCharge + handlingCharge + smallCartCharge;
+  const grandTotal =
+    subtotal + deliveryCharge + handlingCharge + smallCartCharge;
 
   const formattedGrandTotal = grandTotal.toLocaleString("en-IN", {
     style: "currency",
@@ -48,7 +50,6 @@ function ItemsAdd({ clone, toggleClone }) {
     style: "currency",
     currency: "INR",
   });
-
 
   return (
     <div
@@ -96,51 +97,54 @@ function ItemsAdd({ clone, toggleClone }) {
           </div>
         </div>
 
-        {
-          cartItems.length === 0 ? (
-            <div className="p-4 text-center text-gray-600">Your cart is empty.</div>
-          ) : (
-            cartItems.map((item) => (
-              <div key={item.id} className="p-4 bg-white border-b border-gray-100 mt-3 rounded-xl">
-                <div className="flex items-start gap-3">
-                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-12 h-12 object-cover rounded"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-normal text-gray-800 text-[12px]">
-                      {item.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm">{item.size}</p>
-                    <p className="font-semibold text-gray-800 mt-1 text-[11px]">
-                      {item.price}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2 bg-green-500 rounded-md py-1">
-                    <button
-                      onClick={() => dispatch(removeFromCart(item.id))}
-                      className="w-8 h-8 text-white  flex items-center justify-center font-bold "
-                    >
-                      -
-                    </button>
-                    <span className="w-8 text-center font-bold text-white">
-                      {item.quantity}
-                    </span>
-                    <button
-                      onClick={() => dispatch(addToCart(item))}
-                      className="w-8 h-8 text-white  flex items-center justify-center font-bold"
-                    >
-                      +
-                    </button>
-                  </div>
+        {cartItems.length === 0 ? (
+          <div className="p-4 text-center text-gray-600">
+            Your cart is empty.
+          </div>
+        ) : (
+          cartItems.map((item) => (
+            <div
+              key={item.id}
+              className="p-4 bg-white border-b border-gray-100 mt-3 rounded-xl"
+            >
+              <div className="flex items-start gap-3">
+                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-12 h-12 object-cover rounded"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-normal text-gray-800 text-[12px]">
+                    {item.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{item.size}</p>
+                  <p className="font-semibold text-gray-800 mt-1 text-[11px]">
+                    {item.price}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 bg-green-500 rounded-md py-1">
+                  <button
+                    onClick={() => dispatch(removeFromCart(item.id))}
+                    className="w-8 h-8 text-white  flex items-center justify-center font-bold "
+                  >
+                    -
+                  </button>
+                  <span className="w-8 text-center font-bold text-white">
+                    {item.quantity}
+                  </span>
+                  <button
+                    onClick={() => dispatch(addToCart(item))}
+                    className="w-8 h-8 text-white  flex items-center justify-center font-bold"
+                  >
+                    +
+                  </button>
                 </div>
               </div>
-            ))
-          )
-        }
+            </div>
+          ))
+        )}
 
         <div className="p-4 bg-white border-b border-gray-100 rounded-xl mt-3">
           <h3 className="font-bold text-gray-800 mb-3">Bill details</h3>
@@ -163,10 +167,12 @@ function ItemsAdd({ clone, toggleClone }) {
                 </svg>
                 <span className="text-gray-700">Items total</span>
               </div>
-              <span className="font-medium">{subtotal.toLocaleString("en-IN", {
-    style: "currency",
-    currency: "INR",
-  })}</span>
+              <span className="font-medium">
+                {subtotal.toLocaleString("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                })}
+              </span>
             </div>
 
             <div className="flex justify-between items-center">
@@ -271,7 +277,9 @@ function ItemsAdd({ clone, toggleClone }) {
 
           <div className="flex justify-between items-center pt-3 mt-3 border-t border-gray-200">
             <span className="font-bold text-gray-800">Grand total</span>
-            <span className="font-bold text-gray-800">{formattedGrandTotal}</span>
+            <span className="font-bold text-gray-800">
+              {formattedGrandTotal}
+            </span>
           </div>
         </div>
 
@@ -286,7 +294,9 @@ function ItemsAdd({ clone, toggleClone }) {
         <div className="w-[90%] rounded-md absolute bottom-4 left-0 m-auto right-0 bg-green-600 p-2">
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-white text-sm font-bold">{formattedGrandTotal}</p>
+              <p className="text-white text-sm font-bold">
+                {formattedGrandTotal}
+              </p>
               <p className="text-white text-[10px] opacity-90">TOTAL</p>
             </div>
             <button className="text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors">

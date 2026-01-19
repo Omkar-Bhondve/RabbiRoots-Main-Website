@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearch, clearSearch } from "../../features/SearchSlice";
+import { setSearch, clearSearch } from "../../features/SearchSlice.js";
 
 function Search() {
-
-    const products = ["Ghee", "Curd", "Water", "Milk", "Sugar", "Oil"];
+  const products = ["Ghee", "Curd", "Water", "Milk", "Sugar", "Oil"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -16,9 +15,6 @@ function Search() {
     return () => clearInterval(interval);
   }, []);
 
-
-
-
   const dispatch = useDispatch();
   const { term, items } = useSelector((state) => state.search);
 
@@ -27,7 +23,7 @@ function Search() {
   };
 
   const handleSelect = () => {
-    dispatch(clearSearch());  
+    dispatch(clearSearch());
   };
 
   return (
