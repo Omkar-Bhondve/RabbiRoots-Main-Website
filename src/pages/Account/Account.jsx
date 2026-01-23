@@ -7,7 +7,6 @@ import { PiGiftBold } from "react-icons/pi";
 import { FiPackage } from "react-icons/fi";
 import { FaRegAddressCard } from "react-icons/fa";
 
-// using simple emoji/icons to avoid extra dependency on react-icons
 
 import { logout } from "../../features/AuthSlice.js";
 import Addresses from "./Addresses";
@@ -24,14 +23,12 @@ const Account = () => {
 
   const location = useLocation();
 
-  // Allow external navigation to open a specific section, e.g. /account?section=orders
   useEffect(() => {
     try {
       const params = new URLSearchParams(location.search);
       const section = params.get("section");
       if (section) setActiveSection(section);
     } catch (e) {
-      // ignore
     }
   }, [location.search]);
 

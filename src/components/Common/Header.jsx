@@ -7,7 +7,7 @@ import Search from "../UI/Search";
 import Location from "../UI/Location";
 
 import { useState } from "react";
-// import AuthModal from "../Auth/AuthModal";
+import AuthModal from "../Auth/AuthModal";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../features/AuthSlice.js";
 
@@ -28,7 +28,7 @@ function Header({ toggleClone }) {
   const closeAccountMenu = () => setShowAccountMenu(false);
 
   const totalItems = useSelector((state) =>
-    state.cart.items.reduce((total, item) => total + item.quantity, 0)
+    state.cart.items.reduce((total, item) => total + item.quantity, 0),
   );
 
   const totalPrice = useSelector((state) =>
@@ -36,7 +36,7 @@ function Header({ toggleClone }) {
       const priceString = String(item.price); // Ensure it's a string
       const price = parseFloat(priceString.replace(/[^0-9.-]+/g, ""));
       return total + price * item.quantity;
-    }, 0)
+    }, 0),
   );
 
   const formattedTotalPrice = totalPrice.toLocaleString("en-IN", {
@@ -151,7 +151,7 @@ function Header({ toggleClone }) {
           {formattedTotalPrice}
         </button>
       </div>
-      {/* {showAuth && <AuthModal onClose={closeAuth} />} */}
+      {showAuth && <AuthModal onClose={closeAuth} />}
     </div>
   );
 }

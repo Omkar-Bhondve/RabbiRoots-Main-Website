@@ -167,7 +167,9 @@ function ShowItem() {
           {/* Left Column: Images */}
           <div className="lg:col-span-7 space-y-6">
             <div className="flex flex-col-reverse lg:flex-row gap-4">
+
               {/* Thumbnails (Vertical on desktop, Horizontal on mobile) */}
+              
               {gallery.length > 1 && (
                 <div className="flex lg:flex-col gap-3 overflow-x-auto lg:overflow-y-auto lg:max-h-[500px] scrollbar-hide py-2 lg:py-0 px-1 lg:px-0">
                   {gallery.map((img, idx) => (

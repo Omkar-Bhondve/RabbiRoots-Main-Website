@@ -671,11 +671,11 @@ export const createUnifiedProducts = () => {
       // Normalize properties - map volume to size, delivery_time to deliveryTime
       size: product.volume,
       deliveryTime: product.delivery_time,
-      ali: false, // ProductFour doesn't have ali property
+      ali: false,
       price: product.price,
       originalPrice: product.original_price,
       discount: product.discount,
-      image: `/${product.image.replace("./", "")}`, // Fix image path
+      image: `/${product.image.replace("./", "")}`,
       featureImages: product.featureImages
         ? product.featureImages.map((fi) => ({
             ...fi,
